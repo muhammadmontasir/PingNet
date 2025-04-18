@@ -49,6 +49,8 @@ RUN apt-get update && apt-get upgrade -y \
     && echo "deb [signed-by=/etc/apt/keyrings/pgdg.gpg] http://apt.postgresql.org/pub/repos/apt noble-pgdg main" > /etc/apt/sources.list.d/pgdg.list \
     && apt-get update \
     && apt-get install -y iputils-ping \
+    && apt-get install -y traceroute && \
+    rm -rf /var/lib/apt/lists/* \
     && apt-get update \
     && apt-get install -y yarn \
     && apt-get install -y $MYSQL_CLIENT \
